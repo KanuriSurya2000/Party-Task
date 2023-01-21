@@ -2,14 +2,14 @@ table 80000 PartyMaster
 {
     DataClassification = CustomerContent;
     Caption = 'Partymaster';
-    
+
     fields
     {
-        field(1;"No."; Code[20])
+        field(1; "No."; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'No.';
-            
+
         }
         field(2; "Name"; Text[100])
         {
@@ -20,7 +20,7 @@ table 80000 PartyMaster
         {
             DataClassification = CustomerContent;
             Caption = 'Address';
-        } 
+        }
         field(4; city; Text[100])
         {
             DataClassification = CustomerContent;
@@ -30,7 +30,7 @@ table 80000 PartyMaster
         {
             DataClassification = CustomerContent;
             Caption = 'State';
-            
+
         }
         field(6; Country; Code[10])
         {
@@ -46,12 +46,12 @@ table 80000 PartyMaster
         field(8; "Total Party Amount"; Decimal)
         {
             //DataClassification = ToBeClassified;
-            Caption = 'Total Party Amount';
+            Caption = 'Total Party Amount 1';
             FieldClass = FlowField;
-            CalcFormula = sum(PartyLine.Amount where("Party No."=field("No.")));
+            CalcFormula = sum(PartyLine.Amount where("Party No." = field("No.")));
         }
     }
-    
+
     keys
     {
         key(PK; "No.")
@@ -59,28 +59,28 @@ table 80000 PartyMaster
             Clustered = true;
         }
     }
-    
+
     var
         myInt: Integer;
-    
+
     trigger OnInsert()
     begin
-        
+
     end;
-    
+
     trigger OnModify()
     begin
-        
+
     end;
-    
+
     trigger OnDelete()
     begin
-        
+
     end;
-    
+
     trigger OnRename()
     begin
-        
+
     end;
-    
+
 }
