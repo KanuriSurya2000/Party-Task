@@ -46,7 +46,7 @@ table 80000 PartyMaster
         field(8; "Total Party Amount"; Decimal)
         {
             //DataClassification = ToBeClassified;
-            Caption = 'Total Party Amount 1';
+            Caption = 'Total Party Amount ';
             FieldClass = FlowField;
             CalcFormula = sum(PartyLine.Amount where("Party No." = field("No.")));
         }
